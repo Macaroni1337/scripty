@@ -1,0 +1,20 @@
+{
+  "tools": [
+    { "name": "Nmap", "binary": "nmap", "apt": "sudo apt install -y nmap", "brew": "brew install nmap" },
+    { "name": "Netcat", "binary": "nc", "apt": "sudo apt install -y netcat-traditional", "brew": "brew install netcat" },
+    { "name": "Gobuster", "binary": "gobuster", "apt": "sudo apt install -y gobuster", "brew": "brew install gobuster" },
+    { "name": "ffuf", "binary": "ffuf", "apt": "sudo apt install -y ffuf", "brew": "brew install ffuf" },
+    { "name": "Hydra", "binary": "hydra", "apt": "sudo apt install -y hydra", "brew": "brew install hydra" },
+    { "name": "sqlmap", "binary": "sqlmap", "apt": "sudo apt install -y sqlmap", "brew": "brew install sqlmap" },
+    { "name": "WhatWeb", "binary": "whatweb", "apt": "sudo apt install -y whatweb", "brew": "brew install whatweb" },
+    { "name": "Nikto", "binary": "nikto", "apt": "sudo apt install -y nikto", "brew": "brew install nikto" },
+    { "name": "tshark", "binary": "tshark", "apt": "sudo apt install -y tshark", "brew": "brew install wireshark" },
+    { "name": "John the Ripper", "binary": "john", "apt": "sudo apt install -y john", "brew": "brew install john-jumbo" },
+    { "name": "Hashcat", "binary": "hashcat", "apt": "sudo apt install -y hashcat", "brew": "brew install hashcat" },
+    { "name": "enum4linux", "binary": "enum4linux", "apt": "sudo apt install -y enum4linux", "brew": null },
+    { "name": "smbclient", "binary": "smbclient", "apt": "sudo apt install -y smbclient", "brew": "brew install samba" },
+    { "name": "whois", "binary": "whois", "apt": "sudo apt install -y whois", "brew": "brew install whois" },
+    { "name": "dig", "binary": "dig", "apt": "sudo apt install -y dnsutils", "brew": "brew install bind" }
+  ]
+}
+
