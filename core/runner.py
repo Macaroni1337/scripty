@@ -14,6 +14,7 @@ from rich.live import Live
 from rich.panel import Panel
 from rich.text import Text
 
+from core.config import load_config
 from core.paths import get_paths
 from core.theme import COLORS
 
@@ -79,15 +80,23 @@ def offer_save_results(module_slug: str, raw_output: str) -> Optional[Path]:
     if not raw_output.strip():
         return None
     try:
-        do_save = bool(questionary.confirm("Save raw output to ~/.scripty/results/?", default=True).ask())
+        do_save = bool(questionary.confirm("Save raw output?", default=True).ask())
     except KeyboardInterrupt:
         return None
     if not do_save:
         return None
 
+    cfg = load_config()
     p = get_paths()
+    out_dir = p.results_dir
+    if cfg.default_output_dir:
+        try:
+            out_dir = Path(cfg.default_output_dir).expanduser()
+        except Exception:
+            out_dir = p.results_dir
+    out_dir.mkdir(parents=True, exist_ok=True)
     ts = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
-    out_path = p.results_dir / f"{ts}_{module_slug}.txt"
+    out_path = out_dir / f"{ts}_{module_slug}.txt"
     out_path.write_text(raw_output, encoding="utf-8", errors="replace")
     console.print(Panel.fit(Text(str(out_path), style=COLORS.success), title="Saved", border_style=COLORS.success, box=box.ROUNDED))
     return out_path

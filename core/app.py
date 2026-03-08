@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import sys
+
 import questionary
 from rich.console import Console
 from rich.panel import Panel
@@ -45,6 +47,19 @@ def _ensure_disclaimer(cfg) -> bool:
 
 
 def run_interactive(*, initial_target: str | None = None) -> None:
+    if not sys.stdin.isatty():
+        console.print(
+            Panel.fit(
+                Text(
+                    "Interactive mode needs a real TTY.\n"
+                    "Run this in a normal terminal (not a redirected/non-interactive shell).",
+                    style=COLORS.warning,
+                ),
+                border_style=COLORS.warning,
+            )
+        )
+        return
+
     cfg = load_config()
     state = SessionState(sticky_target=initial_target or cfg.default_target)
 

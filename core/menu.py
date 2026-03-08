@@ -54,7 +54,7 @@ def main_menu(*, state: SessionState, cfg: Config) -> None:
                     Choice("🗺️  Post-Exploitation", value="post", description="Enumerate, escalate, persist"),
                     Choice("🧰  Toolkit & Settings", value="toolkit", description="Configure Scripty, manage wordlists"),
                     Choice("📖  Cheat Sheet", value="cheatsheet", description="Quick reference without leaving the terminal"),
-                    Choice("🚪  Exit", value="exit", description="Leave Scripty"),
+                    Choice("🚪  Exit", value="exit", description="Leave Scripty", shortcut_key="q"),
                 ],
                 instruction="Use ↑/↓ then Enter. Press Ctrl+C to go back.",
                 use_shortcuts=True,
