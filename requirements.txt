@@ -1,0 +1,5 @@
+rich>=13.0
+questionary>=2.0
+typer>=0.9
+InquirerPy>=0.3
+toml>=0.10
