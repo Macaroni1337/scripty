@@ -1,0 +1,10 @@
+{
+  "wordlists": [
+    { "name": "rockyou.txt (Kali)", "path": "/usr/share/wordlists/rockyou.txt" },
+    { "name": "dirb common", "path": "/usr/share/wordlists/dirb/common.txt" },
+    { "name": "dirbuster small", "path": "/usr/share/wordlists/dirbuster/directory-list-2.3-small.txt" },
+    { "name": "SecLists discovery (common)", "path": "/usr/share/seclists/Discovery/Web-Content/common.txt" },
+    { "name": "SecLists DNS subdomains (top1m-5000)", "path": "/usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt" }
+  ]
+}
+
