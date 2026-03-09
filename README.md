@@ -1,4 +1,4 @@
-# Scripty — AI-Assisted CLI Pentest Companion
+# Scripty — CLI Pentest Companion
 
 Scripty is a guided, interactive CLI “mentor” that wraps common pentesting tools (nmap, gobuster, hydra, sqlmap, etc.) with a friendly, snarky UX: menus, prompts, command previews, live output, and plain-English summaries.
 
